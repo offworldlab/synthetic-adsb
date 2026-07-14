@@ -93,7 +93,7 @@ class RadarAPI:
 
         @app.route("/api/detection")
         def get_detection():
-            """Get detection data in the format required by 3lips."""
+            """Get detection data in the format required by retina-tracker."""
             measurements = self.store.get_measurements(radar_id)
 
             if not measurements:

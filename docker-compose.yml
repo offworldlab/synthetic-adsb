@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-  adsb-network:
+  blah2:
     external: true
 
 services:
@@ -11,7 +11,10 @@ services:
       context: .
       dockerfile: Dockerfile
     image: synthetic-adsb
-    network_mode: host
+    ports:
+      - "5001:5001"
+    networks:
+      - blah2
     container_name: synthetic-adsb
     env_file:
       - .env
